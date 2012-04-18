@@ -6,7 +6,7 @@
 		transaction-type="JTA">
 		<provider>oracle.toplink.essentials.PersistenceProvider</provider>
 		<jta-data-source>jdbc/__default</jta-data-source>
-		<class>com.hascode.tutorial.jee.User</class>
+		<class>com.hascode.tutorial.jee.Book</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="create-tables" />
 		</properties>
