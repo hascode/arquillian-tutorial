@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 public class Book {
@@ -13,7 +12,6 @@ public class Book {
 	private Long id;
 
 	@NotNull
-	@Size(min = 3, max = 40)
 	private String title;
 
 	@NotNull
@@ -41,5 +39,11 @@ public class Book {
 
 	public void setAuthor(final String author) {
 		this.author = author;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", title=" + title + ", author=" + author
+				+ "]";
 	}
 }

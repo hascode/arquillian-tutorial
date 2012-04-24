@@ -20,7 +20,7 @@ public class BookEJB {
 
 	public List<Book> findAllBooks() {
 		final Query query = em
-				.createQuery("SELECT b FROM Book b ORDER BY b.title DESC");
+				.createQuery("SELECT b FROM Book b ORDER BY b.title ASC");
 		List<Book> entries = query.getResultList();
 		if (entries == null) {
 			entries = new ArrayList<Book>();
