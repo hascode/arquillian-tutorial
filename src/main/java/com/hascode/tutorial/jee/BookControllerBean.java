@@ -2,12 +2,12 @@ package com.hascode.tutorial.jee;
 
 import java.util.List;
 
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 
-@Named("bookControllerBean")
-@SessionScoped
+@RequestScoped
+@ManagedBean(name = "bookControllerBean")
 public class BookControllerBean {
 	@Inject
 	private BookEJB bookEJB;

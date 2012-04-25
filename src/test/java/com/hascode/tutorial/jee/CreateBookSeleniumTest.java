@@ -29,7 +29,8 @@ public class CreateBookSeleniumTest {
 				.addAsResource("META-INF/persistence.xml")
 				.addAsWebResource(new File(WEBAPP_SRC, "books.xhtml"))
 				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
-				.addAsWebInfResource(EmptyAsset.INSTANCE, "faces-config.xml");
+				.addAsWebInfResource(EmptyAsset.INSTANCE, "faces-config.xml")
+				.setWebXML(new File("src/main/webapp/WEB-INF/web.xml"));
 	}
 
 	@Drone
@@ -39,10 +40,11 @@ public class CreateBookSeleniumTest {
 	URL deploymentURL;
 
 	@Test
-	public void should_login_successfully() {
+	public void should_create_and_display_book() {
 		// this will be http://localhost:8181/books/books.xhtml
 		browser.open(deploymentURL + "books.xhtml");
-		browser.waitForPageToLoad("20000");
+		// create a screenshot for the tutorial ;)
+		// browser.captureScreenshot("/tmp/screen.png");
 		browser.type("id=createBookForm:title", "My book title");
 		browser.type("id=createBookForm:author", "The author");
 		browser.click("id=createBookForm:saveBook");
