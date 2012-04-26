@@ -6,8 +6,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 
-@RequestScoped
 @ManagedBean(name = "bookControllerBean")
+@RequestScoped
 public class BookControllerBean {
 	@Inject
 	private BookEJB bookEJB;
